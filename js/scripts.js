@@ -1,7 +1,7 @@
 //Business Logic
 
 function programTest(col, num, bev, mov, mus) {
-  const inputSum = mus + mov + bev + num + col;
+  const inputSum = col + num + bev + mov + mus;
 
   if (inputSum.length >= 0 && inputSum.length <= 15) {
     document.getElementById("ruby").removeAttribute("class");
@@ -17,8 +17,11 @@ function programTest(col, num, bev, mov, mus) {
 function submission() {
   let form = document.getElementById("program");
   form.addEventListener("submit", handleCalculation);
+  
 }
-window.addEventListener("load", submission);
+window.addEventListener("load", submission); {
+ 
+}
 
 function handleCalculation(event) {
   event.preventDefault();
@@ -28,14 +31,27 @@ function handleCalculation(event) {
   const movieInput = document.getElementById("movie").value;
   const musicInput = document.getElementById("music").value;
 
-  let userInputResults = programTest(colorInput + numberInput + drinkInput + movieInput + musicInput);
-  
-
-  document.getElementById("output-rust").innerText = "The language suited to you is: " + userInputResults; + " !";
-
-  };
+  let userInputResults = programTest(colorInput,numberInput, drinkInput, movieInput, musicInput);
+    return userInputResults;
 
 
+};
+
+function reset() {
+  let form = document.getElementById("program");
+
+  document.getElementById("color").value = null;
+  document.getElementById("number").value = null;
+  document.getElementById("drank").value = null;
+  document.getElementById("movie").value = null;
+  document.getElementById("music").value = null;
+  document.getElementById("drank").setAttribute("class","hidden");
+  document.getElementById("movie").setAttribute("class","hidden");
+  document.getElementById("music").setAttribute("class","hidden");
+
+  form.removeEventListener("submit", handleCalculation);
+
+}
 
 
 
