@@ -20,13 +20,8 @@ function submission() {
 }
 window.addEventListener("load", submission);
 
-
-
 function handleCalculation(event) {
-let form = document.querySelector("form#program")
-let resetBtn = document.querySelector("button#reset");
   event.preventDefault();
-
   const colorInput = document.getElementById("color").value;
   const numberInput = document.getElementById("number").value;
   const drinkInput = document.getElementById("drank").value;
@@ -34,24 +29,13 @@ let resetBtn = document.querySelector("button#reset");
   const musicInput = document.getElementById("music").value;
 
   let userInputResults = programTest(colorInput + numberInput + drinkInput + movieInput + musicInput);
-  // let userInputResults = parseInt(programTest(colorInput, numberInput, drinkInput, movieInput, musicInput));
-
-    document.getElementById("output-rust").innerText = "The language suited to you is: " + userInputResults; + " !";
-
-   form.addEventListener("submit", function () {
-    resetBtn.removeAttribute("class");
-
-    resetBtn.addEventListener("click", function() {
-      document.getElementById("color").value = null;
-      document.getElementById("number").value = null;
-      document.getElementById("drank").value = null;
-      document.getElementById("movie").value = null;
-      document.getElementById("music").value = null;
-   });
-
-   });
-  }
-
-
-
   
+
+  document.getElementById("output-rust").innerText = "The language suited to you is: " + userInputResults; + " !";
+
+  };
+
+
+
+
+
