@@ -7,6 +7,9 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.form-group-row {
-  
+.form-group.col-md-6{
+  border: solid black;
+  border-radius: 2px;
+  padding: 5px;
+  margin: 5px;
 }
