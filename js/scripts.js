@@ -12,17 +12,19 @@ function programTest(col, num, bev, mov, mus) {
   }
 }
 
-function addValues
-// UI logic
-window.addEventListener("load", submission);
 
+// UI logic
 function submission() {
   let form = document.getElementById("program");
   form.addEventListener("submit", handleCalculation);
-  
 }
+window.addEventListener("load", submission);
+
+
 
 function handleCalculation(event) {
+let form = document.querySelector("form#program")
+let resetBtn = document.querySelector("button#reset");
   event.preventDefault();
 
   const colorInput = document.getElementById("color").value;
@@ -35,6 +37,19 @@ function handleCalculation(event) {
   // let userInputResults = parseInt(programTest(colorInput, numberInput, drinkInput, movieInput, musicInput));
 
     document.getElementById("output-rust").innerText = "The language suited to you is: " + userInputResults; + " !";
+
+   form.addEventListener("submit", function () {
+    resetBtn.removeAttribute("class");
+
+    resetBtn.addEventListener("click", function() {
+      document.getElementById("color").value = null;
+      document.getElementById("number").value = null;
+      document.getElementById("drank").value = null;
+      document.getElementById("movie").value = null;
+      document.getElementById("music").value = null;
+   });
+
+   });
   }
 
 
