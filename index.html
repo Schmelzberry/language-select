@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js"> </script>
 </head>
+
 <body>
   <h1>Which Programming Language Suits You?</h1>
   <form id="program">
@@ -14,27 +16,30 @@
     <input id="color" type="text">
     <label for="number">Got a favorite number?</label>
     <input id="number" type="text">
-    <label for="age">How old are you?</label>
-    <input id="age" type="text">
+    <label for="drank">If you could drink any beverage right now, what would you go for?</label>
+    <input id="drank" type="text">
     <label for="movie">favorite movie?</label>
     <input id="movie" type="text">
-    <label for="music">What's your favorite color?</label>
+    <label for="music">What is a style of music or specific artist that you enjoy?</label>
     <input id="music" type="text">
     <button type="submit">Enter</button>
   </form>
 
   <div id="ruby" class="hidden">
-    <h2>You got Ruby!</h2>
-  <p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax that is natural to read and easy to write.</p>
+    <h2 id="output-ruby">You got Ruby!</h2>
+    <p>A dynamic, open source programming language with a focus on simplicity and productivity. It has an elegant syntax
+      that is natural to read and easy to write.</p>
   </div>
 
   <div id="csharp" class="hidden">
-    <h2>You got C#!</h2>
+    <h2 id="output-csharp">You got C#!</h2>
     <p>C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.</p>
   </div>
 
   <div id="rust" class="hidden">
-    <h2>You got Rust!</h2>
-    <p>Rust is blazing fast and memory-efficient: with no runtime or garbage collector, it can power performance-critical services, run on embedded devices, and easily integrate with other languages.</p>
+    <h2 id="output-rust">You got Rust!</h2>
+    <p>Rust is blazing fast and memory-efficient: with no runtime or garbage collector, it can power
+      performance-critical services, run on embedded devices, and easily integrate with other languages.</p>
 </body>
+
 </html>
