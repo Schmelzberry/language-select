@@ -13,3 +13,8 @@ body {
   padding: 5px;
   margin: 5px;
 }
+
+.form-group.col-md-6>label {
+  display: block;
+  align-items: left;
+}

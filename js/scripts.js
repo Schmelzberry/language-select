@@ -15,43 +15,53 @@ function programTest(col, num, bev, mov, mus) {
 
 // UI logic
 function submission() {
-  let form = document.getElementById("program");
-  form.addEventListener("submit", handleCalculation);
   
+  let form = document.querySelector("form");
+  form.addEventListener("submit", handleCalculation);
+ 
+
 }
 window.addEventListener("load", submission); {
- 
+}
+
+window.addEventListener("click", clickFx);
+
+
+function clickFx () {
+let button = document.querySelector("button");
+button.addEventListener("click", refreshForm);
 }
 
 function handleCalculation(event) {
   event.preventDefault();
+
+
   const colorInput = document.getElementById("color").value;
   const numberInput = document.getElementById("number").value;
   const drinkInput = document.getElementById("drank").value;
   const movieInput = document.getElementById("movie").value;
   const musicInput = document.getElementById("music").value;
 
-  let userInputResults = programTest(colorInput,numberInput, drinkInput, movieInput, musicInput);
-    return userInputResults;
+  let userInputResults = programTest(colorInput, numberInput, drinkInput, movieInput, musicInput);
+  return userInputResults;
 
 
 };
 
-function reset() {
-  let form = document.getElementById("program");
+function refreshForm() {
+  
+  document.getElementById("color").innerText = "";
+  document.getElementById("number").innerText = "";
+  document.getElementById("drank").innerText = "";
+  document.getElementById("movie").innerText = "";
+  document.getElementById("music").innerText = "";
 
-  document.getElementById("color").value = null;
-  document.getElementById("number").value = null;
-  document.getElementById("drank").value = null;
-  document.getElementById("movie").value = null;
-  document.getElementById("music").value = null;
-  document.getElementById("drank").setAttribute("class","hidden");
-  document.getElementById("movie").setAttribute("class","hidden");
-  document.getElementById("music").setAttribute("class","hidden");
-
-  form.removeEventListener("submit", handleCalculation);
+  window.removeEventListener("click", submission);
 
 }
+
+
+
 
 
 
