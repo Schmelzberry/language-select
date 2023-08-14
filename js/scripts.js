@@ -1,5 +1,4 @@
 //Business Logic
-
 function programTest(col, num, bev, mov, mus) {
   const inputSum = col + num + bev + mov + mus;
 
@@ -12,25 +11,22 @@ function programTest(col, num, bev, mov, mus) {
   }
 }
 
-
 // UI logic
+window.addEventListener("load", submission);
+window.addEventListener("click", clickHappened);
+
 function submission() {
   let form = document.querySelector("form");
   form.addEventListener("submit", handleCalculation);
 }
-window.addEventListener("load", submission);
 
-window.addEventListener("click", clickFx);
-
-function clickFx () {
-let button = document.querySelector("button");
-button.addEventListener("click", refreshFormInput);
-
-
+function clickHappened() {
+  let button = document.querySelector("button");
+  button.addEventListener("click", refreshFormResults);
 }
 
 function handleCalculation(event) {
-event.preventDefault();
+  event.preventDefault();
 
   const colorInput = document.getElementById("color").value;
   const numberInput = document.getElementById("number").value;
@@ -42,29 +38,23 @@ event.preventDefault();
   return userInputResults;
 };
 
-function refreshFormInput() {
-  
-
-  if(document.querySelectorAll("input").innerText != "");
+function refreshFormResults() {
+  if (document.querySelectorAll("input").innerText != "") {
     document.querySelector("div#ruby").setAttribute("class", "hidden");
-    console.log("set ruby class");
-    document.querySelector("div#csharp").setAttribute("class","hidden");
+    document.querySelector("div#csharp").setAttribute("class", "hidden");
     document.querySelector("div#rust").setAttribute("class", "hidden");
-   
+    }
+  }
 
 
+// function clearInputs () {
+//   document.getElementById("color").value = "";
+//   document.getElementById("number").value = "";
+//   document.getElementById("drank").value = "";
+//   document.getElementById("movie").value = "";
+//   document.getElementById("music").value = "";
+//   console.log("inputs cleared");
+// }
 
-  // document.querySelector("input#color").value = "";
-  // document.querySelector("input#number").value = "";
-  // document.querySelector("input#drank").value = "";
-  // document.querySelector("input#movie").value = "";
-  // document.querySelector("input#music").value = "";
-
-  console.log("hello");
-  // window.removeEventListener("click", submission);
-
-
-
-
-
-}
+// let button2 = document.querySelector("button");
+// button2.addEventListener("click", clearInputs);
