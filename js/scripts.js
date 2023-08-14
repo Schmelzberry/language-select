@@ -15,26 +15,22 @@ function programTest(col, num, bev, mov, mus) {
 
 // UI logic
 function submission() {
-  
   let form = document.querySelector("form");
   form.addEventListener("submit", handleCalculation);
- 
-
 }
-window.addEventListener("load", submission); {
-}
+window.addEventListener("load", submission);
 
 window.addEventListener("click", clickFx);
 
-
 function clickFx () {
 let button = document.querySelector("button");
-button.addEventListener("click", refreshForm);
+button.addEventListener("click", refreshFormInput);
+
+
 }
 
 function handleCalculation(event) {
-  event.preventDefault();
-
+event.preventDefault();
 
   const colorInput = document.getElementById("color").value;
   const numberInput = document.getElementById("number").value;
@@ -44,24 +40,31 @@ function handleCalculation(event) {
 
   let userInputResults = programTest(colorInput, numberInput, drinkInput, movieInput, musicInput);
   return userInputResults;
-
-
 };
 
-function refreshForm() {
+function refreshFormInput() {
   
-  document.getElementById("color").innerText = "";
-  document.getElementById("number").innerText = "";
-  document.getElementById("drank").innerText = "";
-  document.getElementById("movie").innerText = "";
-  document.getElementById("music").innerText = "";
 
-  window.removeEventListener("click", submission);
+  if(document.querySelectorAll("input").innerText != "");
+    document.querySelector("div#ruby").setAttribute("class", "hidden");
+    console.log("set ruby class");
+    document.querySelector("div#csharp").setAttribute("class","hidden");
+    document.querySelector("div#rust").setAttribute("class", "hidden");
+   
+
+
+
+  // document.querySelector("input#color").value = "";
+  // document.querySelector("input#number").value = "";
+  // document.querySelector("input#drank").value = "";
+  // document.querySelector("input#movie").value = "";
+  // document.querySelector("input#music").value = "";
+
+  console.log("hello");
+  // window.removeEventListener("click", submission);
+
+
+
+
 
 }
-
-
-
-
-
-
