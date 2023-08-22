@@ -18,6 +18,7 @@ window.addEventListener("click", clickHappened);
 function submission() {
   let form = document.querySelector("form");
   form.addEventListener("submit", handleCalculation);
+  
 }
 
 function clickHappened() {
@@ -36,6 +37,8 @@ function handleCalculation(event) {
 
   let userInputResults = programTest(colorInput, numberInput, drinkInput, movieInput, musicInput);
   return userInputResults;
+
+
 };
 
 function refreshFormResults() {
@@ -44,17 +47,6 @@ function refreshFormResults() {
     document.querySelector("div#csharp").setAttribute("class", "hidden");
     document.querySelector("div#rust").setAttribute("class", "hidden");
     }
+    
   }
 
-
-// function clearInputs () {
-//   document.getElementById("color").value = "";
-//   document.getElementById("number").value = "";
-//   document.getElementById("drank").value = "";
-//   document.getElementById("movie").value = "";
-//   document.getElementById("music").value = "";
-//   console.log("inputs cleared");
-// }
-
-// let button2 = document.querySelector("button");
-// button2.addEventListener("click", clearInputs);
